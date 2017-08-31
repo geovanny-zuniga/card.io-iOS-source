@@ -142,13 +142,11 @@
     }
 
     // Set up logo
-    NSString *logoImageName = config.useCardIOLogo ? @"card_io_logo.png" : @"paypal_logo.png";
+    NSString *logoImageName = @"logo-login.png";
     _logoView = [[UIImageView alloc] initWithImage:[[CardIOBundle sharedInstance] imageNamed:logoImageName]];
     self.logoView.alpha = kLogoAlpha;
     self.logoView.isAccessibilityElement = YES;
-    self.logoView.accessibilityLabel = (config.useCardIOLogo
-                                        ? CardIOLocalizedString(@"card_io_logo",config.languageOrLocale) // card.io
-                                        : CardIOLocalizedString(@"paypal_logo", config.languageOrLocale)); // PayPal
+    //self.logoView.accessibilityLabel = CardIOLocalizedString(@"card_io_logo",config.languageOrLocale) // card.io
     [self addSubview:self.logoView];
     
 #if CARDIO_DEBUG
